@@ -27,7 +27,7 @@ const signIn = (inputData) => {
 const changePassword = (inputData) => {
   return $.ajax({
     // url: 'https://desolate-refuge-14322.herokuapp.com/change-password',
-    url: 'hhttp://localhost:4741/change-password',
+    url: 'http://localhost:4741/change-password',
     // url: 'hhttp://localhost:7165/change-password',
     method: 'PATCH',
     headers: {

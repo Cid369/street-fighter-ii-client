@@ -3,3 +3,32 @@
 .hidden {
   visibility: hidden;
 }
+$background-color: #000064;
+$font-color: #ebbe81;
+$white: #fff;
+$gold: rgb(235, 190, 129);
+$teal: rgb(0, 156, 161);
+$black: #000;
+$red: #ff1a1a;
+
+body {
+  background-color: $background-color;
+}
+
+form {
+  color: $gold;
+}
+
+h1 {
+  color: $red;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  color: $gold;
+  text-align: center;
+}

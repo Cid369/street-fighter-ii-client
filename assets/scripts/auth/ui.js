@@ -17,7 +17,7 @@ const signUpSuccess = (signUpResponse) => {
 const signInSuccess = (signInResponse) => {
   console.log('store object before adding user ', store)
   store.user = signInResponse.user
-  $('#message').html('You signed in successfully.')
+  $('#message').html('Round 1, FIGHT!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
   $('#change-password-form').removeClass('hidden')
