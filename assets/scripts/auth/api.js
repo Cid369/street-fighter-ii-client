@@ -4,8 +4,8 @@ const store = require('../store.js')
 
 const signUp = (inputData) => {
   return $.ajax({
-    url: 'https://desolate-refuge-14322.herokuapp.com/sign-up',
-    // url: 'http://localhost:4741/sign-up',
+    // url: 'https://desolate-refuge-14322.herokuapp.com/sign-up',
+    url: 'http://localhost:4741/sign-up',
     // url: 'http://localhost:7165/sign-up',
     method: 'POST',
     contentType: 'application/json',
@@ -15,8 +15,8 @@ const signUp = (inputData) => {
 
 const signIn = (inputData) => {
   return $.ajax({
-    url: 'https://desolate-refuge-14322.herokuapp.com/sign-in',
-    // url: 'http://localhost:4741/sign-in',
+    // url: 'https://desolate-refuge-14322.herokuapp.com/sign-in',
+    url: 'http://localhost:4741/sign-in',
     // url: 'http://localhost:7165/sign-in',
     method: 'POST',
     contentType: 'application/json',
@@ -26,8 +26,8 @@ const signIn = (inputData) => {
 
 const changePassword = (inputData) => {
   return $.ajax({
-    url: 'https://desolate-refuge-14322.herokuapp.com/change-password',
-    // url: 'hhttp://localhost:4741/change-password',
+    // url: 'https://desolate-refuge-14322.herokuapp.com/change-password',
+    url: 'hhttp://localhost:4741/change-password',
     // url: 'hhttp://localhost:7165/change-password',
     method: 'PATCH',
     headers: {
@@ -40,8 +40,8 @@ const changePassword = (inputData) => {
 
 const signOut = () => {
   return $.ajax({
-    url: 'https://desolate-refuge-14322.herokuapp.com/sign-out',
-    // url: 'http://localhost:4741/sign-out',
+    // url: 'https://desolate-refuge-14322.herokuapp.com/sign-out',
+    url: 'http://localhost:4741/sign-out',
     // url: 'http://localhost:7165/sign-out',
     method: 'DELETE',
     headers: {
