@@ -51,5 +51,4 @@ module.exports = {
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess
-  // boardSuccess
 }

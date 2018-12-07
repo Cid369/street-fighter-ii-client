@@ -1,8 +1,6 @@
+#!/bin/bash
 
-# curl "http://localhost:4741/sign-in" \
-curl "http://localhost:7165/sign-in" \
-  --include \
-  --request POST \
+curl --include --request POST https://desolate-refuge-14322.herokuapp.com/sign-in \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
@@ -10,5 +8,3 @@ curl "http://localhost:7165/sign-in" \
       "password": "'"${PASSWORD}"'"
     }
   }'
-
-echo

@@ -38,21 +38,9 @@ const onSignOut = () => {
     .catch(ui.failure)
 }
 
-// const onBoard = (event) => {
-//   // $('.box').on('click', (event) => {
-//   event.preventDefault()
-//   const userData = getFormFields(event.target)
-//   api.board(userData)
-//     .then(ui.boardSuccess)
-//     .catch(ui.failure)
-//   // $(event.target).append('x')
-//   console.log('working?')
-// }
-//
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut
-  // onBoard
 }

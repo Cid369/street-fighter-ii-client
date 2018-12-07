@@ -1,9 +1,4 @@
+#!/bin/bash
 
-
-# curl "http://localhost:4741/sign-out" \
-curl "http://localhost:7165/sign-out" \
-  --include \
-  --request DELETE \
-  --header "Authorization: Token token=${TOKEN}" \
-
-echo
+curl --include --request DELETE https://desolate-refuge-14322.herokuapp.com/sign-out \
+  --header "Authorization: Token token=${TOKEN}"
