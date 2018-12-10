@@ -50,9 +50,39 @@ const signOut = () => {
   })
 }
 
+// Character editing starts Here
+const enterHp = (inputData) => {
+  return $.ajax({
+    // url: 'https://desolate-refuge-14322.herokuapp.com/enter-hp',
+    url: 'http://localhost:4741/enter-hp',
+    // url: 'http://localhost:7165/enter-hp',
+    method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
+  })
+}
+const changeHp = (inputData) => {
+  return $.ajax({
+    // url: 'https://desolate-refuge-14322.herokuapp.com/change-hp',
+    url: 'http://localhost:4741/change-hp',
+    // url: 'hhttp://localhost:7165/change-hp',
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  enterHp,
+  changeHp
 }

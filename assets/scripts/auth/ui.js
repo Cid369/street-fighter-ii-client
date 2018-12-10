@@ -17,14 +17,16 @@ const signUpSuccess = (signUpResponse) => {
 const signInSuccess = (signInResponse) => {
   console.log('store object before adding user ', store)
   store.user = signInResponse.user
-  $('#message').html('Round 1, FIGHT!')
+  $('#message').html('Select Your Fighter!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
   $('#change-password-form').removeClass('hidden')
   $('#sign-out-button').removeClass('hidden')
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
-  $('#start-game-button').removeClass('hidden')
+  $('#enter-hp').removeClass('hidden')
+  $('#change-hp').removeClass('hidden')
+  $('.character-icon').removeClass('hidden')
 }
 
 const changePasswordSuccess = (changePasswordResponse) => {
@@ -45,10 +47,27 @@ const signOutSuccess = (signOutResponse) => {
   $('#sign-in-form').removeClass('hidden')
 }
 
+const enterHpSuccess = (enterHpResponse) => {
+  console.log('store object before adding user ', store)
+  store.user = enterHpResponse.user
+  $('#message').html('HP enter successfully!')
+  $('#message').addClass('success-message')
+  $('#message').removeClass('error-message')
+}
+
+const changeHpSuccess = (changeHpResponse) => {
+  console.log('store object before adding user ', store)
+  $('#message').html('You changed HP successfully.')
+  $('#message').addClass('success-message')
+  $('#message').removeClass('error-message')
+}
+
 module.exports = {
   failure,
   signUpSuccess,
   signInSuccess,
   changePasswordSuccess,
-  signOutSuccess
+  signOutSuccess,
+  enterHpSuccess,
+  changeHpSuccess
 }
