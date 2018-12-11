@@ -27,6 +27,8 @@ const signInSuccess = (signInResponse) => {
   $('#enter-hp').removeClass('hidden')
   $('#change-hp').removeClass('hidden')
   $('.character-icon').removeClass('hidden')
+  $('#char-select-enter').removeClass('hidden')
+  $('#char-select-change').removeClass('hidden')
 }
 
 const changePasswordSuccess = (changePasswordResponse) => {
@@ -45,6 +47,9 @@ const signOutSuccess = (signOutResponse) => {
   $('#sign-out-button').addClass('hidden')
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
+  $('.character-icon').addClass('hidden')
+  $('#enter-hp').addClass('hidden')
+  $('#change-hp').addClass('hidden')
 }
 
 const enterHpSuccess = (enterHpResponse) => {
@@ -62,6 +67,11 @@ const changeHpSuccess = (changeHpResponse) => {
   $('#message').removeClass('error-message')
 }
 
+const charSelectSuccess = (selectResponse) => {
+  console.log('store object before adding user', store)
+  $('#message').html('You selected a fighter!')
+}
+
 module.exports = {
   failure,
   signUpSuccess,
@@ -69,5 +79,6 @@ module.exports = {
   changePasswordSuccess,
   signOutSuccess,
   enterHpSuccess,
-  changeHpSuccess
+  changeHpSuccess,
+  charSelectSuccess
 }

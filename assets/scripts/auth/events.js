@@ -38,7 +38,7 @@ const onSignOut = () => {
     .catch(ui.failure)
 }
 
-// characters update starts here
+// characters events starts here
 const onEnterHp = (event) => {
   event.preventDefault()
   const userData = getFormFields(event.target)
@@ -56,11 +56,29 @@ const onChangeHp = (event) => {
   $(event.target).trigger('reset')
 }
 
+const onCharEnter = (event) => {
+  event.proventDefault()
+  const userData = getFormFields(event.target)
+  api.charEnter(userData)
+    .then(ui.charEnterSuccess)
+    .catch(ui.failure)
+}
+
+const onCharChange = (event) => {
+  event.proventDefault()
+  const userData = getFormFields(event.target)
+  api.charChange(userData)
+    .then(ui.charChangeSuccess)
+    .catch(ui.failure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
   onEnterHp,
-  onChangeHp
+  onChangeHp,
+  onCharEnter,
+  onCharChange
 }

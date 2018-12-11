@@ -15,4 +15,6 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   $('#enter-hp').on('submit', authEvents.onEnterHp)
   $('#change-hp').on('submit', authEvents.onChangeHp)
+  $('#charEnter').on('submit', authEvents.onCharEnter)
+  $('#charChange').on('submit', authEvents.onCharChange)
 })

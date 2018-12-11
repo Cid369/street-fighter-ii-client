@@ -77,11 +77,18 @@ p {
   width: 130px;
 }
 
-.change-hp {
-  align-items: right;
+// .change-hp {
+//   align-items: right;
+//   display: flex;
+//   flex-direction: row-reverse;
+//   float: right;
+//   margin-right: auto;
+//   text-align: center;
+// }
+
+.char-change {
+  display: flex;
   float: right;
-  margin-right: auto;
-  text-align: center;
 }
 
 // .footer {

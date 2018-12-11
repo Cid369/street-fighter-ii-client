@@ -54,7 +54,7 @@ const signOut = () => {
 const enterHp = (inputData) => {
   return $.ajax({
     // url: 'https://desolate-refuge-14322.herokuapp.com/enter-hp',
-    url: 'http://localhost:4741/enter-hp',
+    url: 'http://localhost:4741/characters',
     // url: 'http://localhost:7165/enter-hp',
     method: 'POST',
     headers: {
@@ -78,11 +78,37 @@ const changeHp = (inputData) => {
   })
 }
 
+const charEnter = (inputData) => {
+  return $.ajax({
+    url: 'http://localhost:4741/char-enter',
+    methon: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringfy(inputData)
+  })
+}
+
+const charChange = (inputData) => {
+  return $.ajax({
+    url: 'http://localhost:4741/char-change',
+    methon: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringfy(inputData)
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   enterHp,
-  changeHp
+  changeHp,
+  charEnter,
+  charChange
 }
