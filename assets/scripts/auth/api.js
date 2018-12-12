@@ -1,5 +1,5 @@
 'use strict'
-
+const config = require('../config.js')
 const store = require('../store.js')
 
 const signUp = (inputData) => {
@@ -54,7 +54,7 @@ const signOut = () => {
 const enterHp = (inputData) => {
   return $.ajax({
     // url: 'https://desolate-refuge-14322.herokuapp.com/enter-hp',
-    url: 'http://localhost:4741/characters',
+    url: config.apiUrl + `/characters/`,
     // url: 'http://localhost:7165/enter-hp',
     method: 'POST',
     headers: {
@@ -67,7 +67,7 @@ const enterHp = (inputData) => {
 const changeHp = (inputData) => {
   return $.ajax({
     // url: 'https://desolate-refuge-14322.herokuapp.com/change-hp',
-    url: 'http://localhost:4741/change-hp',
+    url: config.apiUrl + `/characters/:id`,
     // url: 'hhttp://localhost:7165/change-hp',
     method: 'PATCH',
     headers: {
@@ -81,7 +81,7 @@ const changeHp = (inputData) => {
 const charEnter = (inputData) => {
   return $.ajax({
     url: 'http://localhost:4741/char-enter',
-    methon: 'POST',
+    method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
@@ -93,12 +93,24 @@ const charEnter = (inputData) => {
 const charChange = (inputData) => {
   return $.ajax({
     url: 'http://localhost:4741/char-change',
-    methon: 'POST',
+    method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
     data: JSON.stringfy(inputData)
+  })
+}
+
+const charGet = (inputData) => {
+  return $.ajax({
+    url: config.apiUrl + `/characters`,
+    method: 'GET'
+    // headers: {
+    //   Authorization: `Token token=${store.user.token}`
+    // },
+    // contentType: 'application/json',
+    // data: JSON.stringify(inputData)
   })
 }
 
@@ -110,5 +122,6 @@ module.exports = {
   enterHp,
   changeHp,
   charEnter,
-  charChange
+  charChange,
+  charGet
 }

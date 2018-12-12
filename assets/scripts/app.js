@@ -17,4 +17,5 @@ $(() => {
   $('#change-hp').on('submit', authEvents.onChangeHp)
   $('#charEnter').on('submit', authEvents.onCharEnter)
   $('#charChange').on('submit', authEvents.onCharChange)
+  $('#char-get').on('click', authEvents.onCharGet)
 })

@@ -72,6 +72,11 @@ const onCharChange = (event) => {
     .catch(ui.failure)
 }
 
+const onCharGet = (event) => {
+  api.charGet()
+    .then(ui.charGetSuccess)
+    .catch(ui.failure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -80,5 +85,6 @@ module.exports = {
   onEnterHp,
   onChangeHp,
   onCharEnter,
-  onCharChange
+  onCharChange,
+  onCharGet
 }

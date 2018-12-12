@@ -29,6 +29,7 @@ const signInSuccess = (signInResponse) => {
   $('.character-icon').removeClass('hidden')
   $('#char-select-enter').removeClass('hidden')
   $('#char-select-change').removeClass('hidden')
+  $('#char-get').removeClass('hidden')
 }
 
 const changePasswordSuccess = (changePasswordResponse) => {
@@ -67,9 +68,9 @@ const changeHpSuccess = (changeHpResponse) => {
   $('#message').removeClass('error-message')
 }
 
-const charSelectSuccess = (selectResponse) => {
+const charGetSuccess = (charGetResponse) => {
   console.log('store object before adding user', store)
-  $('#message').html('You selected a fighter!')
+  $('#message').html('You got your fighters!')
 }
 
 module.exports = {
@@ -80,5 +81,5 @@ module.exports = {
   signOutSuccess,
   enterHpSuccess,
   changeHpSuccess,
-  charSelectSuccess
+  charGetSuccess
 }

@@ -68,9 +68,9 @@
       <div class="col-4 col-lg-4 box grey"><img src="../public/photos/Dhalsim_Icon.png" alt="dhalsim"></div>
     </div>
   </div>
+  <button id="char-get" name="character[id, name, hp]" class="hidden">Get Characters</button>
   <div>
     <div class="char-enter">
-
       <form id="enter-hp" class="hidden">
         <select id="char-select-enter" name='character[name]' class="hidden">
           <option value="ryu">Ryu</option>
@@ -90,20 +90,20 @@
   </div>
   <div>
     <div class="char-change">
-      <select id="char-select-change" class="hidden">
-        <option value="ryu">Ryu</option>
-        <option value="honda">E.Honda</option>
-        <option value="blanka">Blanka</option>
-        <option value="guile">Guile</option>
-        <option value="ken">Ken</option>
-        <option value="chun">Chun Li</option>
-        <option value="zangief">Zangief</option>
-        <option value="dhalsim">Dhalsim</option>
-      </select>
-
       <form id="change-hp" class="hidden">
+        <select id="char-select-change" name='character[name]' class="hidden">
+          <option value="ryu">Ryu</option>
+          <option value="honda">E.Honda</option>
+          <option value="blanka">Blanka</option>
+          <option value="guile">Guile</option>
+          <option value="ken">Ken</option>
+          <option value="chun">Chun Li</option>
+          <option value="zangief">Zangief</option>
+          <option value="dhalsim">Dhalsim</option>
+        </select>
+
         <legend>Change HP</legend>
-        <input name="change-hp" type="number" placeholder="Hit Points" />
+        <input name='character[hp]' type="number" placeholder="Hit Points" />
         <input type="submit" />
       </form>
     </div>
