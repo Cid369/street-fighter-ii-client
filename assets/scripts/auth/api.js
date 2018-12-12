@@ -67,7 +67,7 @@ const enterHp = (inputData) => {
 const changeHp = (inputData) => {
   return $.ajax({
     // url: 'https://desolate-refuge-14322.herokuapp.com/change-hp',
-    url: config.apiUrl + `/characters/:id`,
+    url: config.apiUrl + `/characters/:gtiid`,
     // url: 'hhttp://localhost:7165/change-hp',
     method: 'PATCH',
     headers: {
