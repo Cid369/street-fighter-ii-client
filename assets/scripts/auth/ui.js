@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
+const showCharactersTemplate = require('../templates/char-listing.handlebars')
 
 const failure = (signUpFailureResponse) => {
   $('#message').html('You lose!!!')
@@ -15,7 +16,7 @@ const signUpSuccess = (signUpResponse) => {
 }
 
 const signInSuccess = (signInResponse) => {
-  console.log('store object before adding user ', store)
+  // console.log('store object before adding user ', store)
   store.user = signInResponse.user
   $('#message').html('Select Your Fighter!')
   $('#message').addClass('success-message')
@@ -30,10 +31,11 @@ const signInSuccess = (signInResponse) => {
   $('#char-select-enter').removeClass('hidden')
   $('#char-select-change').removeClass('hidden')
   $('#char-get').removeClass('hidden')
+  $('.content').addClass('hidden')
 }
 
 const changePasswordSuccess = (changePasswordResponse) => {
-  console.log('store object before adding user ', store)
+  // console.log('store object before adding user ', store)
   $('#message').html('You changed password successfully.')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
@@ -54,7 +56,7 @@ const signOutSuccess = (signOutResponse) => {
 }
 
 const enterHpSuccess = (enterHpResponse) => {
-  console.log('store object before adding user ', store)
+  // console.log('store object before adding user ', store)
   store.user = enterHpResponse.user
   $('#message').html('HP enter successfully!')
   $('#message').addClass('success-message')
@@ -62,15 +64,23 @@ const enterHpSuccess = (enterHpResponse) => {
 }
 
 const changeHpSuccess = (changeHpResponse) => {
-  console.log('store object before adding user ', store)
+  // console.log('store object before adding user ', store)
   $('#message').html('You changed HP successfully.')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
 }
 
 const charGetSuccess = (charGetResponse) => {
-  console.log('store object before adding user', store)
+  // console.log('store object before adding user', store)
   $('#message').html('You got your fighters!')
+  const showCharactersHtml =
+  showCharactersTemplate({ characters: charGetResponse.characters })
+  $('.content').html(showCharactersHtml)
+  $('.content').removeClass('hidden')
+}
+
+const charDeleteSuccess = (charDeleteResponse) => {
+  $('#message').html('Your fighter been defeated!')
 }
 
 module.exports = {
@@ -81,5 +91,6 @@ module.exports = {
   signOutSuccess,
   enterHpSuccess,
   changeHpSuccess,
-  charGetSuccess
+  charGetSuccess,
+  charDeleteSuccess
 }

@@ -1,0 +1,19 @@
+{{#each characters as |character|}}
+  {{log character}}
+  <!-- !-- {{> partial}} -->
+  <!-- Don't uncomment yet -->
+
+  <div>
+    <section data-id="{{character.id}}">
+      <p>Character ID: {{character.id}}</p>
+      <p>Name: {{character.name}}</p>
+      <p>HP: {{character.hp}}</p>
+      <p>User-ID: {{character.user_id}}</p>
+
+
+      <button type="submit" data-id=“{{character.id}}” class="btn btn-default delete-character">Delete Character</button>
+
+    </section>
+  </div>
+
+{{/each}}

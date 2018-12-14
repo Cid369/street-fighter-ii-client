@@ -67,7 +67,7 @@ const enterHp = (inputData) => {
 const changeHp = (inputData) => {
   return $.ajax({
     // url: 'https://desolate-refuge-14322.herokuapp.com/change-hp',
-    url: config.apiUrl + `/characters/:gtiid`,
+    url: config.apiUrl + `/characters/:id`,
     // url: 'hhttp://localhost:7165/change-hp',
     method: 'PATCH',
     headers: {
@@ -113,6 +113,15 @@ const charGet = (inputData) => {
     // data: JSON.stringify(inputData)
   })
 }
+const charDelete = (id) => {
+  return $.ajax({
+    url: config.apiUrl + `/characters/${id}`,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
 
 module.exports = {
   signUp,
@@ -123,5 +132,6 @@ module.exports = {
   changeHp,
   charEnter,
   charChange,
-  charGet
+  charGet,
+  charDelete
 }

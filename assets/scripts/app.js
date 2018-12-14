@@ -18,4 +18,5 @@ $(() => {
   $('#charEnter').on('submit', authEvents.onCharEnter)
   $('#charChange').on('submit', authEvents.onCharChange)
   $('#char-get').on('click', authEvents.onCharGet)
+  $('.btn btn-default delete-character').on('click', authEvents.onCharDelete)
 })

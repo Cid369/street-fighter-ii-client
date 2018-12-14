@@ -57,7 +57,7 @@ const onChangeHp = (event) => {
 }
 
 const onCharEnter = (event) => {
-  event.proventDefault()
+  event.preventDefault()
   const userData = getFormFields(event.target)
   api.charEnter(userData)
     .then(ui.charEnterSuccess)
@@ -65,7 +65,7 @@ const onCharEnter = (event) => {
 }
 
 const onCharChange = (event) => {
-  event.proventDefault()
+  event.preventDefault()
   const userData = getFormFields(event.target)
   api.charChange(userData)
     .then(ui.charChangeSuccess)
@@ -77,6 +77,20 @@ const onCharGet = (event) => {
     .then(ui.charGetSuccess)
     .catch(ui.failure)
 }
+
+const onCharDelete = (event) => {
+  event.preventDefault()
+  console.log('working?')
+  const id =
+  $(event.target).closest('section').data('id')
+  api.charDelete(id)
+    .then(() => onCharGet(event))
+    .catch(ui.failure)
+}
+const addHandlers = () => {
+  $('.content').on('click', '.delete-character', onCharDelete)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -86,5 +100,7 @@ module.exports = {
   onChangeHp,
   onCharEnter,
   onCharChange,
-  onCharGet
+  onCharGet,
+  onCharDelete,
+  addHandlers
 }
