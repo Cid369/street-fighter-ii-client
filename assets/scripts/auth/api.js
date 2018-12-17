@@ -96,9 +96,9 @@ const charGet = (inputData) => {
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
-    }
-    // contentType: 'application/json',
-    // data: JSON.stringify(inputData)
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
   })
 }
 
