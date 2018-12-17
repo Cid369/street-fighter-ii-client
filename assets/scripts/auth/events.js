@@ -36,6 +36,7 @@ const onSignOut = () => {
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.failure)
+  $(event.target).trigger('reset')
 }
 
 // characters events starts here
@@ -54,6 +55,7 @@ const onCharEnter = (event) => {
   api.charEnter(userData)
     .then(ui.charEnterSuccess)
     .catch(ui.failure)
+  $(event.target).trigger('reset')
 }
 
 const onCharChange = (event) => {
@@ -62,12 +64,14 @@ const onCharChange = (event) => {
   api.charChange(userData)
     .then(ui.charChangeSuccess)
     .catch(ui.failure)
+  $(event.target).trigger('reset')
 }
 
 const onCharGet = (event) => {
   api.charGet()
     .then(ui.charGetSuccess)
     .catch(ui.failure)
+  $(event.target).trigger('reset')
 }
 const onCharUpdate = (event) => {
   event.preventDefault()
@@ -88,7 +92,9 @@ const onCharDelete = (event) => {
   api.charDelete(id)
     .then(() => onCharGet(event))
     .catch(ui.failure)
+  $(event.target).trigger('reset')
 }
+
 const addHandlers = () => {
   $('.content').on('submit', '.update-character', onCharUpdate)
   $('.content').on('click', '.delete-character', onCharDelete)
