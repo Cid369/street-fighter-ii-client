@@ -11,8 +11,14 @@
       <p>User-ID: {{character.user_id}}</p>
 
 
-      <button type="submit" data-id=“{{character.id}}” class="btn btn-default delete-character">Delete Character</button>
+      <form class="update-character">
+        <legend>Update HP</legend>
+        <input name="character[hp]" type="number" placeholder="New HP">
+        <input type="submit">
+      </form>
 
+      <!-- console.log('data-id','work?') -->
+      <button class="btn btn-default delete-character">Delete Character</button>
     </section>
   </div>
 

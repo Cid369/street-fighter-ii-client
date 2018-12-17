@@ -47,14 +47,6 @@ const onEnterHp = (event) => {
     .catch(ui.failure)
   $(event.target).trigger('reset')
 }
-const onChangeHp = (event) => {
-  event.preventDefault()
-  const userData = getFormFields(event.target)
-  api.changeHp(userData)
-    .then(ui.changeHpSuccess)
-    .catch(ui.failure)
-  $(event.target).trigger('reset')
-}
 
 const onCharEnter = (event) => {
   event.preventDefault()
@@ -77,6 +69,16 @@ const onCharGet = (event) => {
     .then(ui.charGetSuccess)
     .catch(ui.failure)
 }
+const onCharUpdate = (event) => {
+  event.preventDefault()
+  const userData = getFormFields(event.target)
+  const id = $(event.target).parent().data('id')
+
+  api.charUpdate(userData, id)
+    .then(ui.changeHpSuccess)
+    .catch(ui.failure)
+  $(event.target).trigger('reset')
+}
 
 const onCharDelete = (event) => {
   event.preventDefault()
@@ -88,6 +90,7 @@ const onCharDelete = (event) => {
     .catch(ui.failure)
 }
 const addHandlers = () => {
+  $('.content').on('submit', '.update-character', onCharUpdate)
   $('.content').on('click', '.delete-character', onCharDelete)
 }
 
@@ -97,10 +100,10 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onEnterHp,
-  onChangeHp,
   onCharEnter,
   onCharChange,
   onCharGet,
+  onCharUpdate,
   onCharDelete,
   addHandlers
 }

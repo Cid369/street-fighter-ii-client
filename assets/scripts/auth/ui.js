@@ -53,19 +53,13 @@ const signOutSuccess = (signOutResponse) => {
   $('.character-icon').addClass('hidden')
   $('#enter-hp').addClass('hidden')
   $('#change-hp').addClass('hidden')
+  $('#char-get').addClass('hidden')
 }
 
 const enterHpSuccess = (enterHpResponse) => {
   // console.log('store object before adding user ', store)
   store.user = enterHpResponse.user
   $('#message').html('HP enter successfully!')
-  $('#message').addClass('success-message')
-  $('#message').removeClass('error-message')
-}
-
-const changeHpSuccess = (changeHpResponse) => {
-  // console.log('store object before adding user ', store)
-  $('#message').html('You changed HP successfully.')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
 }
@@ -79,6 +73,13 @@ const charGetSuccess = (charGetResponse) => {
   $('.content').removeClass('hidden')
 }
 
+const charUpdateSuccess = (charUpdateResponse) => {
+  // console.log('store object before adding user ', store)
+  $('#message').html('You changed HP successfully.')
+  $('#message').addClass('success-message')
+  $('#message').removeClass('error-message')
+}
+
 const charDeleteSuccess = (charDeleteResponse) => {
   $('#message').html('Your fighter been defeated!')
 }
@@ -90,7 +91,7 @@ module.exports = {
   changePasswordSuccess,
   signOutSuccess,
   enterHpSuccess,
-  changeHpSuccess,
   charGetSuccess,
+  charUpdateSuccess,
   charDeleteSuccess
 }

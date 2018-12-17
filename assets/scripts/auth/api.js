@@ -64,19 +64,19 @@ const enterHp = (inputData) => {
     data: JSON.stringify(inputData)
   })
 }
-const changeHp = (inputData) => {
-  return $.ajax({
-    // url: 'https://desolate-refuge-14322.herokuapp.com/change-hp',
-    url: config.apiUrl + `/characters/:id`,
-    // url: 'hhttp://localhost:7165/change-hp',
-    method: 'PATCH',
-    headers: {
-      Authorization: `Token token=${store.user.token}`
-    },
-    contentType: 'application/json',
-    data: JSON.stringify(inputData)
-  })
-}
+// const changeHp = (inputData) => {
+//   return $.ajax({
+//     // url: 'https://desolate-refuge-14322.herokuapp.com/change-hp',
+//     url: config.apiUrl + `/characters/:id`,
+//     // url: 'hhttp://localhost:7165/change-hp',
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: `Token token=${store.user.token}`
+//     },
+//     contentType: 'application/json',
+//     data: JSON.stringify(inputData)
+//   })
+// }
 
 const charEnter = (inputData) => {
   return $.ajax({
@@ -86,33 +86,34 @@ const charEnter = (inputData) => {
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
-    data: JSON.stringfy(inputData)
-  })
-}
-
-const charChange = (inputData) => {
-  return $.ajax({
-    url: 'http://localhost:4741/char-change',
-    method: 'POST',
-    headers: {
-      Authorization: `Token token=${store.user.token}`
-    },
-    contentType: 'application/json',
-    data: JSON.stringfy(inputData)
+    data: JSON.stringify(inputData)
   })
 }
 
 const charGet = (inputData) => {
   return $.ajax({
     url: config.apiUrl + `/characters`,
-    method: 'GET'
-    // headers: {
-    //   Authorization: `Token token=${store.user.token}`
-    // },
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
     // contentType: 'application/json',
     // data: JSON.stringify(inputData)
   })
 }
+
+const charUpdate = (inputData, id) => {
+  return $.ajax({
+    url: config.apiUrl + `/characters/${id}`,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
+  })
+}
+
 const charDelete = (id) => {
   return $.ajax({
     url: config.apiUrl + `/characters/${id}`,
@@ -129,9 +130,8 @@ module.exports = {
   changePassword,
   signOut,
   enterHp,
-  changeHp,
   charEnter,
-  charChange,
+  charUpdate,
   charGet,
   charDelete
 }
