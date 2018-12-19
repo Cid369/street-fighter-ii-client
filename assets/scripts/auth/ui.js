@@ -18,6 +18,7 @@ const signUpSuccess = (signUpResponse) => {
 const signInSuccess = (signInResponse) => {
   // console.log('store object before adding user ', store)
   store.user = signInResponse.user
+  // console.log(store.user)
   $('#message').html('Select Your Fighter!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
@@ -54,11 +55,12 @@ const signOutSuccess = (signOutResponse) => {
   $('#enter-hp').addClass('hidden')
   $('#change-hp').addClass('hidden')
   $('#char-get').addClass('hidden')
+  $('#change-password-form').trigger('reset')
 }
 
 const enterHpSuccess = (enterHpResponse) => {
   // console.log('store object before adding user ', store)
-  store.user = enterHpResponse.user
+  // store.user = enterHpResponse.user
   $('#message').html('HP enter successfully!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
