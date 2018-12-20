@@ -32,9 +32,9 @@ const changePassword = (inputData) => {
   })
 }
 
-const signOut = () => {
+const signOut = (inputData) => {
   return $.ajax({
-    uurl: config.apiUrl + `/sign-out`,
+    url: config.apiUrl + `/sign-out`,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`

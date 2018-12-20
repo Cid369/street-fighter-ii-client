@@ -7,17 +7,16 @@
 // require('./example')
 
 const authEvents = require('./auth/events.js')
+const charEvents = require('./char/char-events.js')
 
 $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
-  $('#enter-hp').on('submit', authEvents.onEnterHp)
-  $('#change-hp').on('submit', authEvents.onChangeHp)
-  $('#charEnter').on('submit', authEvents.onCharEnter)
-  $('#charChange').on('submit', authEvents.onCharChange)
-  $('#char-get').on('click', authEvents.onCharGet)
-  $('.content').on('submit', authEvents.onCharUpdate)
-  $('.content').on('click', '.delete-character', authEvents.onCharDelete)
+  $('#enter-hp').on('submit', charEvents.onEnterHp)
+  $('#charChange').on('submit', charEvents.onCharChange)
+  $('#char-get').on('click', charEvents.onCharGet)
+  $('.content').on('submit', charEvents.onCharUpdate)
+  $('.content').on('click', '.delete-character', charEvents.onCharDelete)
 })

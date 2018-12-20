@@ -1,8 +1,8 @@
 'use strict'
 
 const getFormFields = require('../../../lib/get-form-fields.js')
-const api = require('./api.js')
-const ui = require('./ui.js')
+const api = require('./char-api.js')
+const ui = require('./char-ui.js')
 
 // characters events starts here
 const onEnterHp = (event) => {
@@ -15,6 +15,7 @@ const onEnterHp = (event) => {
 }
 
 const onCharGet = (event) => {
+  event.preventDefault()
   api.charGet()
     .then(ui.charGetSuccess)
     .catch(ui.failure)
@@ -24,7 +25,6 @@ const onCharUpdate = (event) => {
   event.preventDefault()
   const userData = getFormFields(event.target)
   const id = $(event.target).parent().data('id')
-
   api.charUpdate(userData, id)
     .then(ui.changeHpSuccess)
     .catch(ui.failure)
@@ -43,6 +43,7 @@ const onCharDelete = (event) => {
 }
 
 const addHandlers = () => {
+  event.preventDefault()
   $('.content').on('submit', '.update-character', onCharUpdate)
   $('.content').on('click', '.delete-character', onCharDelete)
   $(event.target).trigger('reset')
