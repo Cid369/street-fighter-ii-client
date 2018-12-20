@@ -9,7 +9,7 @@ const failure = (signUpFailureResponse) => {
 }
 
 const signUpSuccess = (signUpResponse) => {
-  $('#message').html('Here comes a new chellenger!!!')
+  $('#message').html('Here comes a new challenger!!!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
 }
@@ -18,7 +18,7 @@ const signInSuccess = (signInResponse) => {
   // console.log('store object before adding user ', store)
   store.user = signInResponse.user
   // console.log(store.user)
-  $('#message').html('Select Your Fighter!')
+  $('#message').html('Signed in! Select Your Fighter!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
   $('#change-password-form').removeClass('hidden')

@@ -26,18 +26,18 @@ const onCharUpdate = (event) => {
   const userData = getFormFields(event.target)
   const id = $(event.target).parent().data('id')
   api.charUpdate(userData, id)
-    .then(ui.changeHpSuccess)
+    .then(ui.charUpdateSuccess)
     .catch(ui.failure)
   $(event.target).trigger('reset')
 }
 
 const onCharDelete = (event) => {
   event.preventDefault()
-  console.log('working?')
+  // console.log('working?')
   const id =
   $(event.target).closest('section').data('id')
   api.charDelete(id)
-    .then(() => onCharGet(event))
+    .then(ui.charDeleteSuccess)
     .catch(ui.failure)
   $(event.target).trigger('reset')
 }
@@ -46,7 +46,6 @@ const addHandlers = () => {
   event.preventDefault()
   $('.content').on('submit', '.update-character', onCharUpdate)
   $('.content').on('click', '.delete-character', onCharDelete)
-  $(event.target).trigger('reset')
 }
 
 module.exports = {

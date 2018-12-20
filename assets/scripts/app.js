@@ -17,6 +17,7 @@ $(() => {
   $('#enter-hp').on('submit', charEvents.onEnterHp)
   $('#charChange').on('submit', charEvents.onCharChange)
   $('#char-get').on('click', charEvents.onCharGet)
+  $('.update-character').on('submit', charEvents.onCharUpdate)
   $('.content').on('submit', charEvents.onCharUpdate)
   $('.content').on('click', '.delete-character', charEvents.onCharDelete)
 })
