@@ -29,10 +29,13 @@ This repo is the front end client side of GA project 2.
 ## Application's Technologies
 
 * JavaScript
-* Ruby
-* Ruby on Rails
-* PostgreSQL
-* Heroku
+* HTML
+* CSS
+* JQuery
+* Handlebars
+* AJAX
+* JSON
+* Bootstrap
 
 ## Development
 
@@ -44,8 +47,8 @@ This repo is the front end client side of GA project 2.
 * Utilised handlebars for delete and update character features.
 * Deploy front end to GitHub and back end to Heroku then test all features.
 
-## ERD (entity relationship diagram)
-<a data-flickr-embed="true"  href="https://www.flickr.com/photos/rickytong82/32321815528/in/album-72157704312576754/" title="Full stack project relation chat"><img src="https://farm5.staticflickr.com/4819/32321815528_d81573ac1b_n.jpg" width="320" height="240" alt="Full stack project relation chat"></a>
+## Wireframe
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/rickytong82/46144062432/in/album-72157704312576754/" title="Full stack project wireframe version 1 and 2"><img src="https://farm5.staticflickr.com/4848/46144062432_3d2decc93f_n.jpg" width="320" height="208" alt="Full stack project wireframe version 1 and 2"></a>
 
 ## Future versions plans
 
