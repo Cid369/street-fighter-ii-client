@@ -45,7 +45,7 @@ This repo is the front end client side of GA project 2.
 * Deploy front end to GitHub and back end to Heroku then test all features.
 
 ## ERD (entity relationship diagram)
-<a data-flickr-embed="true"  href="https://www.flickr.com/photos/rickytong82/32321815528/in/album-72157704312576754/" title="Full stack project relation chat"><img src="https://farm5.staticflickr.com/4819/32321815528_d81573ac1b_n.jpg" width="320" height="240" alt="Full stack project relation chat"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/rickytong82/32321815528/in/album-72157704312576754/" title="Full stack project relation chat"><img src="https://farm5.staticflickr.com/4819/32321815528_d81573ac1b_n.jpg" width="320" height="240" alt="Full stack project relation chat"></a>
 
 ## Future versions plans
 
