@@ -38,6 +38,7 @@ const onSignOut = () => {
     .then(ui.signOutSuccess)
     .catch(ui.failure)
   $(event.target).trigger('reset')
+  // $('.enterHp').trigger('reset')
 }
 
 module.exports = {

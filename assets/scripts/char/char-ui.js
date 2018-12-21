@@ -8,6 +8,7 @@ const failure = (signUpFailureResponse) => {
   $('#message').html('You lose!!!')
   $('#message').addClass('error-message')
   $('#message').removeClass('success-message')
+  $('#enter-hp-form').trigger('reset')
 }
 
 // Character UI starts here.
@@ -17,6 +18,7 @@ const enterHpSuccess = (enterHpResponse) => {
   $('#message').html('HP enter successfully!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
+  $('#enter-hp-form').trigger('clear')
 }
 
 const charGetSuccess = (charGetResponse) => {
@@ -26,6 +28,7 @@ const charGetSuccess = (charGetResponse) => {
   showCharactersTemplate({ characters: charGetResponse.characters })
   $('.content').html(showCharactersHtml)
   $('.content').removeClass('hidden')
+  $('#enter-hp-form').trigger('reset')
 }
 
 const charUpdateSuccess = (charUpdateResponse) => {
@@ -33,10 +36,12 @@ const charUpdateSuccess = (charUpdateResponse) => {
   $('#message').html('You changed HP successfully.')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
+  $('#enter-hp-form').trigger('reset')
 }
 
 const charDeleteSuccess = (charDeleteResponse) => {
   $('#message').html('Your fighter been defeated!')
+  $('#enter-hp-form').trigger('reset')
 }
 
 module.exports = {

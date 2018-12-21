@@ -6,12 +6,14 @@ const failure = (signUpFailureResponse) => {
   $('#message').html('You lose!!!')
   $('#message').addClass('error-message')
   $('#message').removeClass('success-message')
+  $('#enter-hp-form').trigger('reset')
 }
 
 const signUpSuccess = (signUpResponse) => {
   $('#message').html('Here comes a new challenger!!!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
+  $('#enter-hp-form').trigger('reset')
 }
 
 const signInSuccess = (signInResponse) => {
@@ -32,6 +34,7 @@ const signInSuccess = (signInResponse) => {
   $('#char-select-change').removeClass('hidden')
   $('#char-get').removeClass('hidden')
   $('.content').addClass('hidden')
+  $('#enter-hp-form').trigger('reset')
 }
 
 const changePasswordSuccess = (changePasswordResponse) => {
@@ -40,6 +43,7 @@ const changePasswordSuccess = (changePasswordResponse) => {
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
   $('#sign-up-form').addClass('hidden')
+  $('#enter-hp-form').trigger('reset')
 }
 
 const signOutSuccess = (signOutResponse) => {
@@ -55,6 +59,8 @@ const signOutSuccess = (signOutResponse) => {
   $('#change-hp').addClass('hidden')
   $('#char-get').addClass('hidden')
   $('#change-password-form').trigger('reset')
+  $('#enter-hp-form').trigger('reset')
+  $('form').trigger('reset')
 }
 
 module.exports = {
