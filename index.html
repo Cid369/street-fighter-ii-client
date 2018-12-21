@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Street Fighter II</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <img src="public/photos/streetfighter2_title.png" alt="title" class="center">
+
+  <form id="sign-up-form">
+    <legend>Sign Up!</legend>
+    <input name="credentials[email]" type="text" placeholder="email">
+    <input name="credentials[password]" type="password" placeholder="password">
+    <input name="credentials[password_confirmation]" type="password" placeholder="confirm password">
+    <input type="submit" />
+  </form>
+  <!-- sign up form ends here -->
+
+  <!-- sign in form starts here -->
+  <form id="sign-in-form">
+    <legend>Sign In!</legend>
+    <input name="credentials[email]" type="text" placeholder="email" />
+    <input name="credentials[password]" type="password" placeholder="password" />
+    <input type="submit" />
+  </form>
+  <!-- sign in form ends here -->
+
+  <!-- change password starts here -->
+  <form id="change-password-form" class="hidden">
+    <legend>Change Password</legend>
+    <input name="passwords[old]" type="password" placeholder="old password" />
+    <input name="passwords[new]" type="password" placeholder="new password" />
+    <input type="submit" />
+  </form>
+  <!-- change password ends here -->
+
+  <!-- sign out button -->
+  <button id="sign-out-button" class="hidden">Sign Out</button>
+
+  <!-- character icon starts here -->
+  <div class="character-icon hidden">
+    <div class="icons">
+      <!-- Ryu -->
+      <div class="col-4 col-lg-4 box grey"><img src="public/photos/Ryu_Icon.png" alt="ryu"></div>
+      <!-- E.Honda -->
+      <div class="col-4 col-lg-4 box grey"><img src="public/photos/E.Honda_Icon.png" alt="honda"></div>
+      <!-- Blanka -->
+      <div class="col-4 col-lg-4 box grey"><img src="public/photos/Blanka_Icon.png" alt="blanka"></div>
+      <!-- Guile -->
+      <div class="col-4 col-lg-4 box grey"><img src="public/photos/Guile_Icon.png" alt="guile"></div>
+      <!-- Ken -->
+      <div class="col-4 col-lg-4 box grey"><img src="public/photos/Ken_Icon.png" alt="ken"></div>
+      <!-- Chun Li -->
+      <div class="col-4 col-lg-4 box grey"><img src="public/photos/Chun_Li_Icon.png" alt="chun"></div>
+      <!-- Zangief -->
+      <div class="col-4 col-lg-4 box grey"><img src="public/photos/Zangief_Icon.png" alt="zangief"></div>
+      <!-- Dhalsim -->
+      <div class="col-4 col-lg-4 box grey"><img src="public/photos/Dhalsim_Icon.png" alt="dhalsim"></div>
+    </div>
+    <p>You must click on "Get Characters" everytime you perform an action.</p>
+  </div>
+<br>
+  <p id="message"></p>
+<br>
+<br>
+<br>
+
+  <button id="char-get" name="character[id, name, hp]" class="hidden">Get Characters</button>
+  <div>
+    <div class="char-enter">
+      <form id="enter-hp" class="hidden">
+        <select id="char-select-enter" name='character[name]' class="hidden">
+          <option value="Ryu">Ryu</option>
+          <option value="E.Honda">E.Honda</option>
+          <option value="Blanka">Blanka</option>
+          <option value="Guile">Guile</option>
+          <option value="Ken">Ken</option>
+          <option value="Chun Li">Chun Li</option>
+          <option value="Zangief">Zangief</option>
+          <option value="Dhalsim">Dhalsim</option>
+        </select>
+        <legend>Enter HP</legend>
+        <input id="enter-hp-form" name='character[hp]' type="number" placeholder="Hit Points" />
+        <input type="submit" />
+      </form>
+    </div>
+  </div>
+  <!-- <div>
+    <div class="char-change">
+      <form id="change-hp" class="hidden">
+        <select id="char-select-change" name='character[name]' class="hidden">
+          <option value="Ryu">Ryu</option>
+          <option value="E.Honda">E.Honda</option>
+          <option value="Blanka">Blanka</option>
+          <option value="Guile">Guile</option>
+          <option value="Ken">Ken</option>
+          <option value="Chun Li">Chun Li</option>
+          <option value="Zangief">Zangief</option>
+          <option value="Dhalsim">Dhalsim</option>
+        </select>
+
+        <legend>Change HP</legend>
+        <input name='character[hp]' type="number" placeholder="Hit Points" />
+        <input type="submit" />
+      </form>
+    </div> -->
+  <!-- </div> -->
+<div class="content"></div>
+  <!-- <div class="footer">
+      <h6> All Street Fighter 2 title, characters, images, and names are copyrighted by Capcom. I do not own any contents of this web page.
+      </h6>
+    </div> -->
+</body>
+
+</html>
