@@ -61,6 +61,7 @@ const signOutSuccess = (signOutResponse) => {
   $('#change-password-form').trigger('reset')
   $('#enter-hp-form').trigger('reset')
   $('form').trigger('reset')
+  $('.content').addClass('hidden')
 }
 
 module.exports = {

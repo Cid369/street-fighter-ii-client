@@ -28,7 +28,6 @@ const charGetSuccess = (charGetResponse) => {
   showCharactersTemplate({ characters: charGetResponse.characters })
   $('.content').html(showCharactersHtml)
   $('.content').removeClass('hidden')
-  $('#enter-hp-form').trigger('reset')
 }
 
 const charUpdateSuccess = (charUpdateResponse) => {

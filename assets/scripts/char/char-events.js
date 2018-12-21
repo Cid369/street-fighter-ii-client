@@ -46,6 +46,7 @@ const addHandlers = () => {
   event.preventDefault()
   $('.content').on('submit', '.update-character', onCharUpdate)
   $('.content').on('click', '.delete-character', onCharDelete)
+  $(event.target).trigger('reset')
 }
 
 module.exports = {
